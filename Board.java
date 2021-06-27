@@ -13,9 +13,9 @@ public class Board extends JPanel implements ActionListener{
     private static Image head;
     private static Image body;
 
-    static Timer timer;
-    Logic logic = new Logic();
-    Food food = new Food();
+    private static Timer timer;
+    private Logic logic = new Logic();
+    private Food food = new Food();
     public Board(int diff){
 
         //Background
@@ -118,7 +118,7 @@ public class Board extends JPanel implements ActionListener{
         repaint();
     }
 
-    public void gameOver(Graphics g){
+    private void gameOver(Graphics g){
         String family = "Lucida Sans";
         int size = 60;
         int style = Font.BOLD;
@@ -131,7 +131,7 @@ public class Board extends JPanel implements ActionListener{
     }
 
     //Print victory after reach required score
-    public void victory(Graphics g){
+    private void victory(Graphics g){
         String family = "Lucida Sans";
         int size = 60;
         int style = Font.BOLD;
@@ -144,7 +144,7 @@ public class Board extends JPanel implements ActionListener{
     }
 
     //Display exit button after victory or game over
-    public void exitButton(){
+    private void exitButton(){
         setLayout(new BorderLayout());
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JButton exit = new JButton("Exit");
