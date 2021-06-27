@@ -11,9 +11,9 @@ public class Controls extends JPanel{
     private final JButton wasd;
     private final JButton arrows;
 
-    static boolean wasdChoose = true;
-    static boolean arrowsChoose = false;
-    final JFrame controls = new JFrame("Controls");
+    private static boolean wasdChoose = true;
+    private static boolean arrowsChoose = false;
+    private final JFrame controls = new JFrame("Controls");
 
     public Controls()
     {

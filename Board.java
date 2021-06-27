@@ -16,11 +16,12 @@ public class Board extends JPanel implements ActionListener{
     private static Timer timer;
     private Logic logic = new Logic();
     private Food food = new Food();
+    private KeyboardListener keyboardListener = new KeyboardListener();
+
     public Board(int diff){
 
         //Background
         requestFocusInWindow();
-        KeyboardListener keyboardListener = new KeyboardListener();
         addKeyListener(keyboardListener);
         setFocusable(true);
         setBackground(Color.BLACK);

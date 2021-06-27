@@ -3,6 +3,7 @@ package pl.edu.pja;
 import java.util.Random;
 
 import static pl.edu.pja.Food.*;
+import static pl.edu.pja.KeyboardListener.*;
 
 public class Logic{
     private static int speed;
@@ -89,16 +90,16 @@ public class Logic{
             snake.setSnakeX(i, snake.getSnakeX()[i-1]);
             snake.setSnakeY(i, snake.getSnakeY()[i-1]);
         }
-        if(KeyboardListener.up){
+        if(isUp()){
             snake.setSnakeY(0, snake.getSnakeY()[0]-20);
         }
-        if(KeyboardListener.down){
+        if(isDown()){
             snake.setSnakeY(0, snake.getSnakeY()[0]+20);
         }
-        if(KeyboardListener.left){
+        if(isLeft()){
             snake.setSnakeX(0, snake.getSnakeX()[0]-20);
         }
-        if(KeyboardListener.right){
+        if(isRight()){
             snake.setSnakeX(0, snake.getSnakeX()[0]+20);
         }
     }
@@ -108,21 +109,21 @@ public class Logic{
         switch(random.nextInt(4))
         {
             case 1: {
-                setFood(Food.getR().getImage());
+                setFood(getR().getImage());
                 if((snake.getSnakeX()[0] == getFoodX()) && snake.getSnakeY()[0] == getFoodY()){
                     snake.setLength(1);
                 }
                 break;
             }
             case 2: {
-                setFood(Food.getG().getImage());
+                setFood(getG().getImage());
                 if((snake.getSnakeX()[0] == getFoodX()) && snake.getSnakeY()[0] == getFoodY()){
                     Logic.speed -= 2;
                 }
                 break;
             }
             case 3: {
-                setFood(Food.getB().getImage());
+                setFood(getB().getImage());
                 if((snake.getSnakeX()[0] == getFoodX()) && snake.getSnakeY()[0] == getFoodY()){
                     snake.setLength(-1);
                 }

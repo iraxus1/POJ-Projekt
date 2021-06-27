@@ -4,10 +4,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyboardListener implements KeyListener {
-    static boolean up = false;
-    static boolean down = false;
-    static boolean left = false;
-    static boolean right = false;
+    private static boolean up = false;
+    private static boolean down = false;
+    private static boolean left = false;
+    private static boolean right = false;
     Controls controls = new Controls();
         public void keyTyped(KeyEvent e){}
         @Override
@@ -59,5 +59,21 @@ public class KeyboardListener implements KeyListener {
             }
         }
         public void keyReleased(KeyEvent e){}
+
+    public static boolean isUp() {
+        return up;
     }
+
+    public static boolean isDown() {
+        return down;
+    }
+
+    public static boolean isLeft() {
+        return left;
+    }
+
+    public static boolean isRight() {
+        return right;
+    }
+}
 
