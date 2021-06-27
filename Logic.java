@@ -11,6 +11,9 @@ public class Logic{
     private static boolean gameOver = false;
     private static boolean victory = false;
 
+    private Snake snake = new Snake();
+    private Random random = new Random();
+
     public static int getSpeed() {
         return speed;
     }
@@ -43,7 +46,7 @@ public class Logic{
         Logic.victory = victory;
     }
 
-    Snake snake = new Snake();
+
     public boolean checkHits(int boardHeight, int boardWidth){
         //snake collision
         for(int i = snake.getLength(); i > 0; i--){
@@ -102,7 +105,6 @@ public class Logic{
 
     public void foodColor()
     {
-        Random random = new Random();
         switch(random.nextInt(4))
         {
             case 1: {
